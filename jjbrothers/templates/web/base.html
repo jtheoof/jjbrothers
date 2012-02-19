@@ -22,16 +22,19 @@
 <body onload="{% block loaded  %}loaded(){% endblock loaded  %}">
 <div id="main">
 	<div id="top">
-        <div id="logo">
-			<div>jjbr<img src="/jjb/img/aperture.png" />thers</div>
-			<div id="sublogo">{% trans "Photographie" %}</div>
+        <div id="top-logo">
+			<div id="top-title>">jjbr<img src="/jjb/img/aperture.png" />thers</div>
+			<div id="top-subtitle">{% trans "Photographie" %}</div>
+			<div id="top-img">
+				{% block logo_img %}{% endblock %}
+			</div>
 		</div>
 		<!-- <div id="links">
-					<ul class="nav">
-						<li><a href="/weddings">{% trans "Mariages" %}</a></li>
-						<li><a href="#">{% trans "Paysages" %}</a></li>
-						<li><a href="mailto:jjb@jjbrothers.net">{% trans "Nous Contacter" %}</a></li>
-					</ul>
+			<ul class="nav">
+				<li><a href="/weddings">{% trans "Mariages" %}</a></li>
+				<li><a href="#">{% trans "Paysages" %}</a></li>
+				<li><a href="mailto:jjb@jjbrothers.net">{% trans "Nous Contacter" %}</a></li>
+			</ul>
 				</div> -->
     </div>
     
@@ -40,7 +43,7 @@
 	<div id="footer">
     	<div id="contact"><a href="mailto:jjb@jjbrothers.net">{% trans "Contactez Nous" %}</a></div>
         <div>Copyright &copy; 2009-2012 Johan &amp; Jérémy Attali. Tous droits réservés.</div>
-   	</div>
+   	</div> <!-- footer -->
 </div> <!-- main -->
 </body>
 </html>

@@ -16,26 +16,28 @@ a:hover { color:#396; text-decoration:none; }
 /* jjb-base 			 */
 
 #main { background-color: #2A2A2A; }
+
+/*************************/
+/* jjb-top 			 	 */
+
 #top  { padding-top: 40px;  }
 
-#top #logo 
+#top-logo 
 { 
 	margin-left: 40px; 
 	width:320px; 
 	font-size:35px; 
 }
-#top #sublogo
+#top-subtitle
 {
 	margin:7px 0 0 17px;
 	font-size:17px;
 	color:#29a47b;
 }
-#top #links { float:right; margin-right:40px; width:400px; }
 
-#top #link li
+#top-img 
 {
-	width:100px;
-	display:inline;
+	
 }
 
 /*************************/
