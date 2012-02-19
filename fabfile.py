@@ -202,7 +202,8 @@ from __future__ import with_statement # needed for python 2.5
 from fabric.api import *
 
 # globals
-env.project_name = 'project_name'
+env.app_name = 'photography'
+env.project_name = 'jjbrothers'
 env.use_photologue = False # django-photologue gallery module
 
 # environments
@@ -214,11 +215,11 @@ def localhost():
     env.path = '/home/%(user)s/workspace/%(project_name)s' % env
     env.virtualhost_path = env.path
 
-def webserver():
+def web():
     "Use the actual webserver"
-    env.hosts = ['www.example.com']
-    env.user = 'username'
-    env.path = '/var/www/%(project_name)s' % env
+    env.hosts = ['test.jjbrothers.webfactional.com']
+    env.user = 'jjbrothers'
+    env.path = '/home/jjbrothers/webapps/%(app_name)s' % env
     env.virtualhost_path = env.path
 
 # tasks
@@ -227,13 +228,12 @@ def test():
     "Run the test suite and bail out if it fails"
     result = local("cd %(path)s; python manage.py test" % env) #, fail="abort")
 
-
 def setup():
     """
     Setup a fresh virtualenv as well as a few useful directories, then run
     a full deployment
     """
-    require('hosts', provided_by=[localhost,webserver])
+    require('hosts', provided_by=[localhost,web])
     require('path')
     sudo('aptitude install -y python-setuptools')
     sudo('easy_install pip')
@@ -257,20 +257,21 @@ def deploy():
     install any required third party modules,
     install the virtual host and then restart the webserver
     """
-    require('hosts', provided_by=[localhost,webserver])
+    require('hosts', provided_by=[localhost,web])
     require('path')
     import time
     env.release = time.strftime('%Y%m%d%H%M%S')
-    upload_tar_from_git()
-    install_requirements()
-    install_site()
-    symlink_current_release()
-    migrate()
+    #upload_tar_from_git()
+    #install_requirements()
+    #install_site()
+    #symlink_current_release()
+    #migrate()
+    git_pull_master()
     restart_webserver()
 
 def deploy_version(version):
     "Specify a specific version to be made live"
-    require('hosts', provided_by=[localhost,webserver])
+    require('hosts', provided_by=[localhost,web])
     require('path')
     env.version = version
     with cd(env.path):
@@ -283,7 +284,7 @@ def rollback():
     Limited rollback capability. Simple loads the previously current
     version of the code. Rolling back again will swap between the two.
     """
-    require('hosts', provided_by=[localhost,webserver])
+    require('hosts', provided_by=[localhost,web])
     require('path')
     with cd(env.path):
         run('mv releases/current releases/_previous;', pty=True)
@@ -298,6 +299,7 @@ def upload_tar_from_git():
     require('release', provided_by=[deploy, setup])
     local('git archive --format=tar master | gzip > %(release)s.tar.gz' % env)
     run('mkdir -p %(path)s/releases/%(release)s' % env, pty=True)
+    run('mkdir -p %(path)s/packages' % env, pty=True)
     put('%(release)s.tar.gz' % env, '%(path)s/packages/' % env)
     run('cd %(path)s/releases/%(release)s && tar zxf ../../packages/%(release)s.tar.gz' % env, pty=True)
     local('rm %(release)s.tar.gz' % env)
@@ -328,6 +330,10 @@ def migrate():
     require('project_name')
     run('cd %(path)s/releases/current/%(project_name)s;  ../../../bin/python manage.py syncdb --noinput' % env, pty=True)
 
+def git_pull_master():
+	"Get latest codebase on master branch"
+	run('cd %(path)s/%(project_name)s; git pull' % env, pty=True)
+
 def restart_webserver():
     "Restart the web server"
-    sudo('/etc/init.d/apache2 reload', pty=True)
+    run('%(path)s/apache2/bin/restart' % env, pty=True)
