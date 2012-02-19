@@ -19,12 +19,12 @@
 
 </head>
 
-<body onload="{% block loaded  %}loaded(){% endblock loaded  %}">
+<body onload="{% block loaded  %}{% endblock loaded  %}">
 <div id="main">
 	
-	<div id="main-top">
+	<div id="main-top" class="section">
         <div id="top-logo">
-			<div id="top-title>">jjbr<img src="/jjb/img/aperture.png" />thers</div>
+			<div id="top-title">jjbr<img src="/jjb/img/aperture.png" />thers</div>
 			<div id="top-subtitle">{% trans "Photographie" %}</div>
 		</div>
 		<!-- <div id="links">
@@ -41,12 +41,37 @@
 	</div>
 	
 	<div id="main-container">
-		<div id="container-title">{% block container_title %}Title{% endblock %}</div>
-		<div id="container-content">{% block container_content %}Content{% endblock %}</div>
+		<div id="container-title">{% block container_title %}{% endblock %}</div>
+		<div id="container-content">{% block container_content %}{% endblock %}</div>
+	</div>
+
+	<div id="about-us" class="section clearfix">
+		<h1>{% trans "Evènements" %}</h1>
+		<div class="photo">
+			<img class="us" src="/jjb/img/photo.jpg" />
+		</div>
+		<div class="desc">
+			{% blocktrans %}
+			<p>Nous sommes deux jumeaux, Johan et Jérémy (les JJ Brothers),
+			passionnés par la photographie.</p>
+			<p>Actuellent en pleine création de notre portefolio, nous
+			assistons à tous types d'évènements: mariages, célébrations, et
+			autres heureuses occasions en tout genre...</p>
+			<p>Ce site, qui sera le reflet de notre travail, est en pleine
+			construction, revenez dans quelques temps pour avoir des idées sur
+			notre type de photographie.</p>
+			<p>En attendant, contactez nous sur notre adresse:
+			<a href="mailto:contact@jjbrothers.net">contact@jjbrothers.net</a>
+			si vous avez des questions sur nos services, tarifs, ...</p>
+			<p>A bientôt !</p>
+			{% endblocktrans %}
+		</div>
 	</div>
     
 	<div id="footer">
-    	<div id="contact"><a href="mailto:jjb@jjbrothers.net">{% trans "Contactez Nous" %}</a></div>
+    	<div id="contact">
+    		<a href="mailto:jjb@jjbrothers.net">{% trans "Contactez Nous" %}</a>
+    	</div>
         <div>Copyright &copy; 2009-2012 Johan &amp; Jérémy Attali. Tous droits réservés.</div>
    	</div> <!-- footer -->
 </div> <!-- main -->
