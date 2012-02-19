@@ -11,16 +11,23 @@ body
 
 a:hover { color:#396; text-decoration:none; }
 
-
 /*************************/
-/* jjb-base 			 */
+/* jjb-main 			 */
 
-#main { background-color: #2A2A2A; }
+#main { background-color: #2A2A2A; position:absolute; width:inherit; }
+ 
+#main-img { position:absolute; top:-80px; z-index:1; opacity:1;; width:800px; }
 
 /*************************/
 /* jjb-top 			 	 */
 
-#top  { padding-top: 40px;  }
+#main-top
+{ 
+	position:relative;
+	padding: 20px 0 10px 0;
+	z-index:2;
+	background-color:rgba(0,0,0,0.6);
+}
 
 #top-logo 
 { 
@@ -43,8 +50,23 @@ a:hover { color:#396; text-decoration:none; }
 /*************************/
 /* jjb-container 		 */
 
+#main-container
+{
+	position:relative;
+	margin-top:200px;
+	min-height:50px;
+	z-index:2;
+}
+
+#container-title
+{
+	padding:20px 0 10px 40px;
+	background-color:rgba(0,0,0,0.6);
+	min-height:30px;
+}
+
 /*************************/
 /* jjb-footer 			 */
 
-#footer 			{clear:both; font-size:smaller; margin: 10px 20px;}
+#footer 			{clear:both; font-size:smaller; margin: 10px 20px; }
 #footer #contact 	{float: right; }

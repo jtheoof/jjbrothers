@@ -21,13 +21,11 @@
 
 <body onload="{% block loaded  %}loaded(){% endblock loaded  %}">
 <div id="main">
-	<div id="top">
+	
+	<div id="main-top">
         <div id="top-logo">
 			<div id="top-title>">jjbr<img src="/jjb/img/aperture.png" />thers</div>
 			<div id="top-subtitle">{% trans "Photographie" %}</div>
-			<div id="top-img">
-				{% block logo_img %}{% endblock %}
-			</div>
 		</div>
 		<!-- <div id="links">
 			<ul class="nav">
@@ -37,8 +35,15 @@
 			</ul>
 				</div> -->
     </div>
-    
-{% block container %}{% endblock %}
+
+	<div id="main-img">
+		{% block img %}{% endblock %}
+	</div>
+	
+	<div id="main-container">
+		<div id="container-title">{% block container_title %}Title{% endblock %}</div>
+		<div id="container-content">{% block container_content %}Content{% endblock %}</div>
+	</div>
     
 	<div id="footer">
     	<div id="contact"><a href="mailto:jjb@jjbrothers.net">{% trans "Contactez Nous" %}</a></div>

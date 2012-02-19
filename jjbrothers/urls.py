@@ -9,7 +9,7 @@ import os
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'jjbrothers.portal.views.weddings', name='weddings'),
+    url(r'^$', 'jjbrothers.portal.views.home', name='home'),
     # url(r'^jjbrothers/', include('jjbrothers.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
