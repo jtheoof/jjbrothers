@@ -1,0 +1,46 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>{% block title %}TITLE GOES HERE {% endblock %}</title>
+
+<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="/jjb/css/jjb.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="http://www.jjbrothers.net/favicon.ico" />
+
+<!-- <script src="/js/mootools.js" type="text/javascript"></script> -->
+<!-- <script src="/js/common.js" type="text/javascript"></script> -->
+
+{% block css %}{% endblock %}
+{% block js %}{% endblock %}
+
+</head>
+
+<body onload="{% block loaded  %}loaded(){% endblock loaded  %}">
+<div id="main">
+	<div id="top">
+        <div id="logo">
+			<div>jjbr<img src="/jjb/img/aperture.png" />thers</div>
+			<div id="sublogo">{% trans "Photographie" %}</div>
+		</div>
+		<!-- <div id="links">
+					<ul class="nav">
+						<li><a href="/weddings">{% trans "Mariages" %}</a></li>
+						<li><a href="#">{% trans "Paysages" %}</a></li>
+						<li><a href="mailto:jjb@jjbrothers.net">{% trans "Nous Contacter" %}</a></li>
+					</ul>
+				</div> -->
+    </div>
+    
+{% block container %}{% endblock %}
+    
+	<div id="footer">
+    	<div id="contact"><a href="mailto:jjb@jjbrothers.net">{% trans "Contactez Nous" %}</a></div>
+        <div>Copyright &copy; 2009-2012 Johan &amp; Jérémy Attali. Tous droits réservés.</div>
+   	</div>
+</div> <!-- main -->
+</body>
+</html>
