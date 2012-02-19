@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
+from django.views.generic.simple import redirect_to
 
 import os
 
@@ -10,6 +11,7 @@ import os
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'jjbrothers.portal.views.home', name='home'),
+    (r'^wedding/key/XPr57$', redirect_to, {'url': 'https://picasaweb.google.com/100199303636029289529/EveBruno?authuser=0&authkey=Gv1sRgCJq3xZup4Lqbaw&feat=directlink'}),
     # url(r'^jjbrothers/', include('jjbrothers.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
