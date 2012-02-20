@@ -10,7 +10,7 @@ import os
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'jjbrothers.portal.views.home', name='home'),
+    url(r'^$', 'apps.portal.views.home', name='home'),
     (r'^wedding/key/XPr57$', redirect_to, {'url': 'https://picasaweb.google.com/100199303636029289529/EveBruno?authuser=0&authkey=Gv1sRgCJq3xZup4Lqbaw&feat=directlink'}),
     # url(r'^jjbrothers/', include('jjbrothers.foo.urls')),
 
@@ -21,16 +21,11 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
 )
 
-if settings.DEBUG:
+if settings.DEBUG == True:
 	urlpatterns += patterns('',
 		(
-			r'^/?bootstrap/(?P<path>.*)$', 
+			r'^/?media/(?P<path>.*)$', 
 			'django.views.static.serve', 
-			{'document_root': (os.path.dirname(os.path.abspath(__file__)) + '/./static/bootstrap')}
-		),
-		(
-			r'^/?jjb/(?P<path>.*)$', 
-			'django.views.static.serve', 
-			{'document_root': (os.path.dirname(os.path.abspath(__file__)) + '/./static/jjb')}
+			{'document_root': settings.MEDIA_ROOT, 'show_indexes': True}
 		),
 	)
