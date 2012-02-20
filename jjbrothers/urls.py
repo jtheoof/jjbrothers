@@ -11,7 +11,7 @@ import os
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'apps.portal.views.home', name='home'),
-    (r'^wedding/key/XPr57$', redirect_to, {'url': 'https://picasaweb.google.com/100199303636029289529/EveBruno?authuser=0&authkey=Gv1sRgCJq3xZup4Lqbaw&feat=directlink'}),
+    (r'^EveBruno$', redirect_to, {'url': 'https://picasaweb.google.com/100199303636029289529/EveBruno?authuser=0&authkey=Gv1sRgCJq3xZup4Lqbaw&feat=directlink'}),
     # url(r'^jjbrothers/', include('jjbrothers.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
