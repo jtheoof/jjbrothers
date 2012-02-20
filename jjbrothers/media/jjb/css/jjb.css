@@ -1,0 +1,100 @@
+/*************************/
+/* jjb-tags				 */
+
+body
+{ 
+	background-color: #111;
+	color: white; 
+	margin: 0 auto;
+	width: 800px; 
+}
+
+a:hover { color:#396; text-decoration:none; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+}
+``
+/*************************/
+/* jjb-main 			 */
+
+#main { background-color: #2A2A2A; position:absolute; width:inherit; }
+ 
+#main-img { position:absolute; top:-80px; z-index:1; opacity:1;; width:800px; }
+
+/*************************/
+/* jjb-top 			 	 */
+
+#main-top
+{ 
+	position:relative;
+	padding: 20px 0 10px 0;
+	z-index:2;
+	background-color:rgba(0,0,0,0.6);
+}
+
+#top-logo 
+{ 
+	margin-left: 40px; 
+	width:320px; 
+	font-size:35px; 
+}
+#top-subtitle
+{
+	margin:7px 0 0 17px;
+	font-size:17px;
+	color:#29a47b;
+}
+
+#top-img 
+{
+	
+}
+
+/*************************/
+/* jjb-container 		 */
+
+#main-container
+{
+	position:relative;
+	margin-top:200px;
+	min-height:50px;
+	z-index:2;
+}
+
+#container-title
+{
+	padding:20px 0 10px 40px;
+	min-height:30px;
+}
+
+/*************************/
+/* about-us      		 */
+
+#about-us { 
+	background-color: rgba(0, 0, 0, 0.6);
+	margin: 10px 0 0px 0;
+	padding: 5px 0px 20px 0;
+}
+#about-us h1 { margin: 10px; }
+
+#about-us .photo { float: left; margin-left: 20px; }
+#about-us .photo img { border: 5px solid white; }
+
+#about-us .desc { display: inline; }
+#about-us .desc p {
+	padding: 0 0 10px 350px;
+	font-size: 18px;
+	line-height: 22.5px;
+}
+
+/*************************/
+/* jjb-footer 			 */
+
+#footer 			{clear:both; font-size:smaller; margin: 10px 20px; }
+#footer #contact 	{float: right; }
