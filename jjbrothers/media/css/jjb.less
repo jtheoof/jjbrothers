@@ -2,7 +2,6 @@
 /* Variables                                                                 */
 
 @background-color: #231a1b;
-@selected-color: #3188d5;
 @total-witdh: 960px;
 
 /*****************************************************************************/
@@ -22,7 +21,21 @@ body {
   width: @total-witdh; 
 }
 
+.body-home #header li.selected a { color: #3188d5; }
+.body-weddings #header li.selected a { color: #d34c00; }
+.body-landscapes #header li.selected a { color: #108b00; }
+.body-books #header li.selected a { color: #af168d; }
+.body-about #header li.selected a { color: #d20a0c; }
+
 a:hover { color:#396; text-decoration:none; }
+
+.arrow-bottom {
+  width: 0;
+  height: 0;
+  border-top: 10px solid @background-color;
+  border-left: 10px solid transparent; 
+  border-right:10px solid transparent;
+}
 
 /*****************************************************************************/
 /* Header                                                                    */
@@ -34,21 +47,38 @@ a:hover { color:#396; text-decoration:none; }
   .navigation {
     float: right;
     font-family: Verdana, sans-serif;
+    padding-top: 50px;
     li {
       display: inline;
       margin-left: 1em;
+      position: relative;
       text-transform: uppercase;
-      font-size: 13px;
+      font-size: 14px;
       
       a {
         color: white;
       }
-    }
-    li.selected {
-      a {
-        color: @selected-color;
+      span.arrow {
+        display: none;
       }
     }
+    li.selected {
+      span.arrow {
+        display: block;
+        position: absolute;
+        top: 27px;
+        left: 33%;
+      }
+    }
+  }
+}
+
+/*****************************************************************************/
+/* Banner                                                                    */
+
+#banner {
+  img {
+    border: 1px solid white;
   }
 }
 
