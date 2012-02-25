@@ -15,7 +15,7 @@ def weddings(request):
 	context = { 'body_class': 'weddings' }
 
 	return render_to_response(
-	    'web/home.html',
+	    'web/weddings.html',
 	    context,
 	    context_instance=RequestContext(request))
 
