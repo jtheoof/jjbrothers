@@ -1,0 +1,79 @@
+/*****************************************************************************/
+/* Variables                                                                 */
+
+@background-color: #231a1b;
+@selected-color: #3188d5;
+@total-witdh: 960px;
+
+/*****************************************************************************/
+/* Mixins                                                                    */
+.rounded-corners (@radius: 4px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+/*****************************************************************************/
+/* Global                                                                    */
+body { 
+  background-color: @background-color;
+  color: white; 
+  margin: 0 auto;
+  width: @total-witdh; 
+}
+
+a:hover { color:#396; text-decoration:none; }
+
+/*****************************************************************************/
+/* Header                                                                    */
+
+#header {
+  .logo {
+    float: left;
+  }
+  .navigation {
+    float: right;
+    font-family: Verdana, sans-serif;
+    li {
+      display: inline;
+      margin-left: 1em;
+      text-transform: uppercase;
+      font-size: 13px;
+      
+      a {
+        color: white;
+      }
+    }
+    li.selected {
+      a {
+        color: @selected-color;
+      }
+    }
+  }
+}
+
+/*************************/
+/* about-us           */
+
+#about-us { 
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 10px 0 0px 0;
+  padding: 5px 0px 20px 0;
+}
+#about-us h1 { margin: 10px; }
+
+#about-us .photo { float: left; margin-left: 20px; }
+#about-us .photo img { border: 5px solid white; }
+
+#about-us .desc { display: inline; }
+#about-us .desc p {
+  padding: 0 0 10px 350px;
+  font-size: 18px;
+  line-height: 22.5px;
+}
+
+/*************************/
+/* jjb-footer        */
+
+#footer       {clear:both; font-size:smaller; margin: 10px 20px; }
+#footer #contact   {float: right; }

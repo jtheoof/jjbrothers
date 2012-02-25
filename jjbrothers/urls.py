@@ -11,6 +11,10 @@ import os
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'apps.portal.views.home', name='home'),
+    url(r'^weddings$', 'apps.portal.views.weddings', name='weddings'),
+    url(r'^landscapes$', 'apps.portal.views.landscapes', name='landscapes'),
+    url(r'^books$', 'apps.portal.views.books', name='books'),
+    url(r'^about$', 'apps.portal.views.about', name='about'),
     (r'^EveBruno$', redirect_to, {'url': 'https://picasaweb.google.com/100199303636029289529/EveBruno?authuser=0&authkey=Gv1sRgCJq3xZup4Lqbaw&feat=directlink'}),
     # url(r'^jjbrothers/', include('jjbrothers.foo.urls')),
 

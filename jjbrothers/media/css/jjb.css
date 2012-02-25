@@ -3,29 +3,20 @@
 
 body
 { 
-	background-color: #111;
+	background-color: #231a1b;
 	color: white; 
 	margin: 0 auto;
-	width: 800px; 
+	width: 960px; 
 }
 
 a:hover { color:#396; text-decoration:none; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: white;
-}
-``
-/*************************/
-/* jjb-main 			 */
 
-#main { background-color: #2A2A2A; position:absolute; width:inherit; }
- 
-#main-img { position:absolute; top:-80px; z-index:1; opacity:1;; width:800px; }
+/*****************************************************************************/
+/* Header                                                                    */
+
+#header .logo { float: left; }
+#header .navigation { float: right; }
 
 /*************************/
 /* jjb-top 			 	 */
@@ -54,23 +45,6 @@ h6 {
 #top-img 
 {
 	
-}
-
-/*************************/
-/* jjb-container 		 */
-
-#main-container
-{
-	position:relative;
-	margin-top:200px;
-	min-height:50px;
-	z-index:2;
-}
-
-#container-title
-{
-	padding:20px 0 10px 40px;
-	min-height:30px;
 }
 
 /*************************/
