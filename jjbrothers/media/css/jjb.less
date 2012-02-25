@@ -24,7 +24,7 @@ body {
 }
 
 .body-home #header li.selected a { color: #3188d5; }
-.body-weddings #header li.selected a { color: #d34c00; }
+.body-weddings #header li.selected a { color: #fb78aa; }
 .body-landscapes #header li.selected a { color: #108b00; }
 .body-books #header li.selected a { color: #af168d; }
 .body-about #header li.selected a { color: #d20a0c; }
@@ -37,6 +37,7 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   border-bottom: 1px solid @h1-color;
+  border-top: 1px solid @h1-color;
 }
 
 h2 {
@@ -72,6 +73,7 @@ a:hover { color:#396; text-decoration:none; }
       position: relative;
       text-transform: uppercase;
       font-size: 14px;
+      font-weight: bold;
       
       a {
         color: white;
@@ -107,32 +109,34 @@ a:hover { color:#396; text-decoration:none; }
   section.content {
     background-color: #292021;
     padding: 8px;
+    margin: 10px 0;
+
     .rounded-corners(5px);
+  }
+  div.block-image {
+    display: inline-block;
+    width: 225px;
+
+    img {
+      border: 2px solid white;
+      .rounded-corners(2px);
+    }
+    h3 {
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      text-align: center;
+    }
   }
 }
 
-/*************************/
-/* about-us           */
+/*****************************************************************************/
+/* Footer                                                                    */
 
-#about-us { 
-  background-color: rgba(0, 0, 0, 0.6);
-  margin: 10px 0 0px 0;
-  padding: 5px 0px 20px 0;
+#footer {
+  clear:both;
+  font-size:smaller;
+  margin: 10px 20px; 
+
+  #contact {float: right; }
 }
-#about-us h1 { margin: 10px; }
-
-#about-us .photo { float: left; margin-left: 20px; }
-#about-us .photo img { border: 5px solid white; }
-
-#about-us .desc { display: inline; }
-#about-us .desc p {
-  padding: 0 0 10px 350px;
-  font-size: 18px;
-  line-height: 22.5px;
-}
-
-/*************************/
-/* jjb-footer        */
-
-#footer       {clear:both; font-size:smaller; margin: 10px 20px; }
-#footer #contact   {float: right; }
