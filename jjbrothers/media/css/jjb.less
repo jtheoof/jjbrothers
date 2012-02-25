@@ -2,6 +2,8 @@
 /* Variables                                                                 */
 
 @background-color: #231a1b;
+@h1-color: #7e7056;
+@h2-color: #fff;
 @total-witdh: 960px;
 
 /*****************************************************************************/
@@ -26,6 +28,22 @@ body {
 .body-landscapes #header li.selected a { color: #108b00; }
 .body-books #header li.selected a { color: #af168d; }
 .body-about #header li.selected a { color: #d20a0c; }
+
+h1 {
+  color: @h1-color;
+  font-size: 18px;
+  padding: 10px 0;
+  margin: 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid @h1-color;
+}
+
+h2 {
+  color: @h2-color;
+  font-size: 16px;
+  font-weight: bold;
+}
 
 a:hover { color:#396; text-decoration:none; }
 
@@ -79,6 +97,17 @@ a:hover { color:#396; text-decoration:none; }
 #banner {
   img {
     border: 1px solid white;
+  }
+}
+
+/*****************************************************************************/
+/* Container                                                                 */
+
+#container {
+  section.content {
+    background-color: #292021;
+    padding: 8px;
+    .rounded-corners(5px);
   }
 }
 

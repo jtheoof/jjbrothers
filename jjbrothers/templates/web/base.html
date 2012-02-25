@@ -81,11 +81,11 @@
   </header>
 
   <section id="banner">
-    {% block img %}{% endblock %}
+    {% block banner_img %}{% endblock %}
   </section>
   
-  <div id="main-container">
-    <div id="container-title">{% block container_title %}{% endblock %}</div>
+  <section id="container">
+    <h1>{% block container_title %}{% endblock %}</h1>
     <div id="container-content">{% block container_content %}{% endblock %}</div>
   </div>
 
@@ -114,12 +114,13 @@
     </div>
   </div>
     
-  <div id="footer">
-      <div id="contact">
-        <a href="mailto:jjb@jjbrothers.net">{% trans "Contactez Nous" %}</a>
-      </div>
-        <div>Copyright &copy; 2009-2012 Johan &amp; Jérémy Attali. Tous droits réservés.</div>
-     </div> <!-- footer -->
+  <footer id="footer">
+    <div id="contact">
+      <a href="mailto:jjb@jjbrothers.net">{% trans "Contactez Nous" %}</a>
+    </div>
+    <div>Copyright &copy; 2009-2012 Johan &amp; Jérémy Attali. Tous droits réservés.</div>
+   </footer>
+
   <!-- JavaScript at the bottom for fast page loading -->
   {% block js %}{% endblock %}
 
