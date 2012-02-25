@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 
 def home(request):
-	context = {}
+	context = { 'body_class': 'home' }
 
 	return render_to_response(
 	    'web/home.html',
@@ -12,7 +12,7 @@ def home(request):
 
 
 def weddings(request):
-	context = {}
+	context = { 'body_class': 'weddings' }
 
 	return render_to_response(
 	    'web/home.html',
@@ -21,7 +21,7 @@ def weddings(request):
 
 
 def landscapes(request):
-	context = {}
+	context = { 'body_class': 'landscapes' }
 
 	return render_to_response(
 	    'web/home.html',
@@ -30,7 +30,7 @@ def landscapes(request):
 
 
 def books(request):
-	context = {}
+	context = { 'body_class': 'books' }
 
 	return render_to_response(
 	    'web/home.html',
@@ -38,7 +38,7 @@ def books(request):
 	    context_instance=RequestContext(request))
 
 def about(request):
-	context = {}
+	context = { 'body_class': 'about' }
 
 	return render_to_response(
 	    'web/home.html',

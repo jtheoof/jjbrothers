@@ -43,8 +43,7 @@
   <script src="/media/js/libs/modernizr.custom.64427.js"></script>
 </head>
 
-<body>
-<div id="main">
+<body class="body-{{ body_class }}">
   {% url home as home_url %}
   {% url weddings as weddings_url %}
   {% url landscapes as landscapes_url %}
@@ -59,26 +58,31 @@
       <ul class="navigation">
         <li class="{% selected request home_url %}">
           <a href="{{ home_url }}">{% trans "Accueil" %}</a>
+          <span class="arrow arrow-bottom"></span>
         </li>
         <li class="{% selected request weddings_url %}">
           <a href="{{ weddings_url }}">{% trans "Mariages" %}</a>
+          <span class="arrow arrow-bottom"></span>
         </li>
         <li class="{% selected request landscapes_url %}">
           <a href="{{ landscapes_url }}">{% trans "Paysages" %}</a>
+          <span class="arrow arrow-bottom"></span>
         </li>
         <li class="{% selected request books_url %}">
           <a href="{{ books_url }}">{% trans "Portfolios" %}</a>
+          <span class="arrow arrow-bottom"></span>
         </li>
         <li class="{% selected request about_url %}">
           <a href="{{ about_url }}">{% trans "A propos" %}</a>
+          <span class="arrow arrow-bottom"></span>
         </li>
       </ul>
     </nav>
   </header>
 
-  <div id="main-img">
+  <section id="banner">
     {% block img %}{% endblock %}
-  </div>
+  </section>
   
   <div id="main-container">
     <div id="container-title">{% block container_title %}{% endblock %}</div>
@@ -116,7 +120,6 @@
       </div>
         <div>Copyright &copy; 2009-2012 Johan &amp; Jérémy Attali. Tous droits réservés.</div>
      </div> <!-- footer -->
-</div> <!-- main -->
   <!-- JavaScript at the bottom for fast page loading -->
   {% block js %}{% endblock %}
 
