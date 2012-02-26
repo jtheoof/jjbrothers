@@ -23,6 +23,17 @@
       </p>
       {% endblocktrans %}
     </div>
+    {% if messages %}
+      <div class="messages">
+        <ul>
+          {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+              {{ message }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
     <div class="form contact-form clearfix">
       <form method="post" action={{ contact_url }}>
         {% csrf_token %}

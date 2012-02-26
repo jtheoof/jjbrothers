@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     url(r'^weddings$', 'apps.portal.views.weddings', name='weddings'),
     url(r'^landscapes$', 'apps.portal.views.landscapes', name='landscapes'),
     url(r'^portfolios$', 'apps.portal.views.portfolios', name='portfolios'),
-    url(r'^about$', 'apps.portal.views.contact', name='contact'),
+    url(r'^contact$', 'apps.portal.views.contact', name='contact'),
     (r'^EveBruno$', redirect_to, {'url': 'https://picasaweb.google.com/100199303636029289529/EveBruno?authuser=0&authkey=Gv1sRgCJq3xZup4Lqbaw&feat=directlink'}),
     # url(r'^jjbrothers/', include('jjbrothers.foo.urls')),
 

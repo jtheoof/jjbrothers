@@ -131,6 +131,34 @@ p {
     .rounded-corners(10px);
     .box-shadow(4px, 4px, 20px);
 
+    .messages {
+      padding: 15px 0;
+      margin: 0 0 10px 0;
+      text-align: center;
+      border-bottom: 1px solid @border-color;
+      border-top: 1px solid @border-color;
+
+      ul, ol {
+        list-style: none;
+        list-style-image: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          font-size: 20px;
+          font-weight: bold;
+          line-height: 25px;
+          text-align: center;
+        }
+        li.info {
+          color: #0DA81B;
+        }
+        li.error {
+          color: #d20a0c;
+        }
+      }
+    }
+
     .form {
       margin: 10px auto;
       width: 540px;
