@@ -1,7 +1,11 @@
-from django.shortcuts import render_to_response, get_object_or_404
+import os
+
+from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 
+from akismet import Akismet
 from forms import ContactForm
 
 def home(request):
@@ -38,13 +42,34 @@ def portfolios(request):
         context_instance=RequestContext(request))
 
 def contact(request):
+    try:
+        agent = request.META['HTTP_USER_AGENT']
+    except:
+        agent = None
+    try:
+        ip = request.META['REMOTE_ADDR']
+    except:
+        ip = os.environ['REMOTE_ADDR']
+    akismet_api = Akismet(key=settings.AKISMET_API_KEY, agent=agent)
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('/thanks')
+            cd = form.cleaned_data
+            data = {
+                'user_ip': ip,
+                'user_agent': agent,
+                'comment_author_email': cd['sender'],
+            }
+            if akismet_api.comment_check(
+                '%s - %s' % (cd['subject'], cd['message']),
+                data):
+                # Invalid (probably spam)
+                pass
+            else:
+                return HttpResponseRedirect('/thanks')
     else:
-        form = ContactForm()
+        form = ContactForm(label_suffix='')
 
     context = {
         'body_class': 'about',

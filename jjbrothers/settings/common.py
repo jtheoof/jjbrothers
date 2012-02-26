@@ -165,3 +165,7 @@ LOGGING = {
         },
     }
 }
+
+# This key belongs to Jeremy Attali and was created on 1/8/11
+# Treat it like a password.
+AKISMET_API_KEY = '16039f0b5a15'

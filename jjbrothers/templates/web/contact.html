@@ -23,8 +23,14 @@
       </p>
       {% endblocktrans %}
     </div>
-    <div class="form contact-form">
-      {{ form.as_table }}
+    <div class="form contact-form clearfix">
+      <form method="post" action={{ contact_url }}>
+        {% csrf_token %}
+        <table class="django-form-table">
+          {{ form.as_table }}
+        </table>
+        <input type="submit" class="btn-success contact-us" value="{% trans 'Envoyer' %}" />
+      </form>
     </div>
   </section>
 {% endblock %}
