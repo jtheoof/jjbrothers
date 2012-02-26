@@ -3,7 +3,13 @@ from django import forms
 from django.utils.translation import ugettext_lazy as _
 
 class ContactForm(forms.Form):
-    sender = forms.EmailField(
+    sender = forms.CharField(
+        label=_('Nom'),
+        widget=forms.TextInput(attrs={
+            'class': 'span6'
+        })
+    )
+    email = forms.EmailField(
         label=_('Email'),
         widget=forms.TextInput(attrs={
             'class': 'span6'
