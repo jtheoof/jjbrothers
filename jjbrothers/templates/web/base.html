@@ -48,7 +48,7 @@
   {% url weddings as weddings_url %}
   {% url landscapes as landscapes_url %}
   {% url portfolios as books_url %}
-  {% url about as about_url %}
+  {% url contact as contact_url %}
   
   <header id="header" class="clearfix">
     <div class="logo">
@@ -72,8 +72,8 @@
           <a href="{{ books_url }}">{% trans "Portfolios" %}</a>
           <span class="arrow arrow-bottom"></span>
         </li>
-        <li class="{% selected request about_url %}">
-          <a href="{{ about_url }}">{% trans "A propos" %}</a>
+        <li class="{% selected request contact_url %}">
+          <a href="{{ contact_url }}">{% trans "A propos" %}</a>
           <span class="arrow arrow-bottom"></span>
         </li>
       </ul>

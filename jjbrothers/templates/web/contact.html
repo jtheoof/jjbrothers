@@ -1,0 +1,31 @@
+{% extends "web/base.html" %}
+{% load i18n %}
+{% block title %}JJBrothers - {% trans "Photographes" %} - {% trans "Mariages" %} {% endblock %}
+
+{% block logo %}<img src="/media/img/logos/home.png" />{% endblock logo %}
+
+{% block banner_img %}<img src="/media/img/banners/about.jpg">{% endblock %}
+
+{% block container_title %}{% trans "Nous contacter" %}{% endblock %}
+
+{% block container_content %}
+  <section class="content">
+    <div class="block-form">
+      {% blocktrans %}
+      <p>
+        N'hésitez pas à nous contacter pour toute demande de renseigments,
+        de disponibilités ou pour nous demander comment ça va. Nous sommes très
+        sociables et n'avons encore jamais mangé personne.
+        Nos tarifs sont assez bas comparativement au reste du marché puisque nous
+        sommes toujours dans l'élaboration de notre portefolio. Vous pouvez
+        utiliser le formulaire ci-dessous pour nous contacter et obtenir tous les
+        renseigments que vous desirez.
+      </p>
+      {% endblocktrans %}
+    </div>
+    <div class="form contact-form">
+      {{ form.as_table }}
+    </div>
+  </section>
+{% endblock %}
+
