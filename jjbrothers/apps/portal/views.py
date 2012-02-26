@@ -29,7 +29,7 @@ def landscapes(request):
 	    context_instance=RequestContext(request))
 
 
-def books(request):
+def portfolios(request):
 	context = { 'body_class': 'books' }
 
 	return render_to_response(

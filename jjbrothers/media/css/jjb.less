@@ -125,17 +125,16 @@ a:hover { color:@link-hover-color; text-decoration:none; }
     .rounded-corners(10px);
     .box-shadow(4px, 4px, 20px);
   }
-  div.block-image {
+  .block-image {
     display: inline-block;
     margin: 0 3px;
-    width: 225px;
+    /*width: 225px;*/
     cursor:pointer;
 
     img {
       border: 3px solid white;
       .rounded-corners(4px);
     }
-    
 
     h3 {
       color: white;
@@ -144,10 +143,17 @@ a:hover { color:@link-hover-color; text-decoration:none; }
       text-align: center;
     }
   }
-  div.block-image:hover {
+  .block-image:hover {
 	img { border: 3px solid @link-color;}
 	h3 	{ color:@link-color; }
-}
+  }
+
+  section.home {
+    .block-image { width: 225px; }
+  }
+  section.wedding {
+    .block-image { width: 178px; }
+  }
 }
 
 /*****************************************************************************/
