@@ -33,7 +33,7 @@ def portfolios(request):
 	context = { 'body_class': 'books' }
 
 	return render_to_response(
-	    'web/home.html',
+	    'web/portfolios.html',
 	    context,
 	    context_instance=RequestContext(request))
 

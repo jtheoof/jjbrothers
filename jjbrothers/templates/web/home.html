@@ -9,23 +9,31 @@
 {% block container_title %}{% trans "Accueil" %}{% endblock %}
 
 {% block container_content %}
-  <section class="content home">
-    <div class="block-image">
-      <img src="/media/img/photos/home/weddings.jpg" />
-      <h3>{% trans "Mariages" %}</h3>
-    </div>
-    <div class="block-image">
-      <img src="/media/img/photos/home/portfolios.jpg" />
-      <h3>{% trans "Portfolios" %}</h3>
-    </div>
-    <div class="block-image">
-      <img src="/media/img/photos/home/landscapes.jpg" />
-      <h3>{% trans "Paysages" %}</h3>
-    </div>
-    <div class="block-image">
-      <img src="/media/img/photos/home/contacts.jpg" />
-      <h3>{% trans "Contact" %}</h3>
-    </div>
+  <section class="content thumbnail-portrait">
+    <a href="{{ weddings_url }}">
+      <div class="block-image">
+        <img src="/media/img/photos/home/weddings.jpg" />
+        <h3>{% trans "Mariages" %}</h3>
+      </div>
+    </a>
+    <a href="{{ books_url }}">
+      <div class="block-image">
+        <img src="/media/img/photos/home/portfolios.jpg" />
+        <h3>{% trans "Portfolios" %}</h3>
+      </div>
+    </a>
+    <a href="{{ landscapes_url }}">
+      <div class="block-image">
+        <img src="/media/img/photos/home/landscapes.jpg" />
+        <h3>{% trans "Paysages" %}</h3>
+      </div>
+    </a>
+    <a href="{{ about_url }}">
+      <div class="block-image">
+        <img src="/media/img/photos/home/contacts.jpg" />
+        <h3>{% trans "Contact" %}</h3>
+      </div>
+    </a>
   </section>
 
   <section class="content">
