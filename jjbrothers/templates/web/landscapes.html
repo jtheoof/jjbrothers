@@ -6,59 +6,20 @@
 
 {% block banner_img %}<img src="/media/img/banners/home.jpg">{% endblock %}
 
-{% block container_title %}{% trans "Accueil" %}{% endblock %}
+{% block container_title %}{% trans "Paysages" %}{% endblock %}
 
 {% block container_content %}
-  <section class="content thumbnail-portrait">
-    <a href="{{ weddings_url }}">
-      <div class="block-image">
-        <img src="/media/img/photos/home/weddings.jpg" />
-        <h3>{% trans "Mariages" %}</h3>
-      </div>
-    </a>
-    <a href="{{ books_url }}">
-      <div class="block-image">
-        <img src="/media/img/photos/home/portfolios.jpg" />
-        <h3>{% trans "Portfolios" %}</h3>
-      </div>
-    </a>
-    <a href="{{ landscapes_url }}">
-      <div class="block-image">
-        <img src="/media/img/photos/home/landscapes.jpg" />
-        <h3>{% trans "Paysages" %}</h3>
-      </div>
-    </a>
-    <a href="{{ about_url }}">
-      <div class="block-image">
-        <img src="/media/img/photos/home/contacts.jpg" />
-        <h3>{% trans "Contact" %}</h3>
-      </div>
-    </a>
+  <h2>{% trans "San Francisco" %}</h2>
+  <section class="content thumbnail-landscape">
+    <div class="block-image">
+      <img src="/media/img/photos/landscapes/san-francisco-1.jpg" />
+    </div>
   </section>
-
-  <section class="content">
-    <h2>{% trans "En quelques mots" %}</h2>
-
-    <p>
-    {% blocktrans  %}
-		Nous sommes deux jumeaux, Johan et Jérémy (les jjbrothers), passionnés
-	  par la photographie.
-		{% endblocktrans %}
-    </p>
-
-    <h2>{% trans "Nos photos" %}</h2>
-    <p>
-    {% blocktrans %}
-    Nous nous efforçons lors de chaque évènement de créer des photos
-    uniques, propres à notre style photographique.
-
-    Actuellent en pleine construction de notre portefolio, notre panel d’activités
-    s’étend aux mariages, books photos, et divers évènements.
-
-    Nous effectuons des photographies de paysages pour notre propre plasir.
-    {% endblocktrans %}
-    </p>
+  <h2>{% trans "Yosemite National Park" %}</h2>
+  <section class="content thumbnail-landscape">
+    <div class="block-image">
+      <img src="/media/img/photos/landscapes/yosemite-1.jpg" />
+    </div>
   </section>
-
+  <h2>{% trans "France" %}</h2>
 {% endblock %}
-
