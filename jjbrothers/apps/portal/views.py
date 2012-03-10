@@ -29,7 +29,7 @@ def weddings(request):
 def landscapes(request):
     context = { 'body_class': 'landscapes' }
     return render_to_response(
-        'web/home.html',
+        'web/landscapes.html',
         context,
         context_instance=RequestContext(request))
 
