@@ -177,8 +177,6 @@ p {
   .block-image {
     display: inline-block;
     margin: 0 3px;
-    /*width: 225px;*/
-    cursor:pointer;
 
     img {
       border: 3px solid white;
@@ -192,7 +190,9 @@ p {
       text-align: center;
     }
   }
-  .block-image:hover {
+
+  /* FIXME This CSS rule is bad */
+  a .block-image:hover {
 	img { border: 3px solid @link-color;}
 	h3 	{ color:@link-color; }
   }
