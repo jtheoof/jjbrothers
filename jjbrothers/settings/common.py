@@ -169,11 +169,12 @@ LOGGING = {
 # Email preferences
 # We are using gmail account jjbrothers.photography@gmail.com
 EMAIL_USE_TLS = True
+EMAIL_PORT = 587
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'jjbrothers.photography@gmail.com'
 EMAIL_HOST_PASSWORD = 'joebar13$'
-EMAIL_PORT = 587
-JJBROTHERS_EMAIL_ADDRESS = 'jjb@jjbrothers.net'
+DEFAULT_FROM_EMAIL = 'jjb@jjbrothers.net'
+SERVER_EMAIL = 'jjbrothers.photography@gmail.com'
 
 # This key belongs to Jeremy Attali and was created on 1/8/11
 # Treat it like a password.

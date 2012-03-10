@@ -54,12 +54,14 @@ def contact(request):
                     _(u'Merci de nous avoir contactés.'),
                     _(u'Nous vous répondrons très rapidement.'),]:
                     messages.add_message(request, messages.INFO, m)
-                message = '%s\r\n%s' % (cd['message'], cd['sender'])
+                message = '%s\r\n' % cd['message']
+                message += 'From:  %s\r\n' % cd['sender']
+                message += 'Email: %s\r\n' % cd['email']
                 send_mail(
                     cd['subject'].encode("utf-8"),
                     message.encode("utf-8"),
                     cd['email'],
-                    (settings.JJBROTHERS_EMAIL_ADDRESS,))
+                    ['johan@jjbrothers.net', 'jeremy@jjbrothers.net'])
             return HttpResponseRedirect('/contact')
         else:
             messages.add_message(request, messages.ERROR, 'Formulaire invalide.')
