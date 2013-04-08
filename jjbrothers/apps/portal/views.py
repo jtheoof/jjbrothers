@@ -60,7 +60,7 @@ def contact(request):
                 send_mail(
                     cd['subject'].encode("utf-8"),
                     message.encode("utf-8"),
-                    cd['email'],
+                    settings.SERVER_EMAIL,
                     ['johan@jjbrothers.net', 'jeremy@jjbrothers.net'])
             return HttpResponseRedirect('/contact')
         else:
